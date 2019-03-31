@@ -1,0 +1,130 @@
+﻿<Window x:Class="Matematyka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Matematyka"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="900">
+    <Grid >
+        <Grid Margin="0,0,445,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="445"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="125"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label x:Name="title" Grid.Column="0" Grid.Row="0" FontSize="26" Content="Śmieszne zadanka :)"  HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBlack"/>
+            <Label x:Name="name" Grid.Column="0" Grid.Row="1" FontSize="20" Content="Jak masz na imię?"  HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="ExtraBlack" Margin="41,6,0,6"/>
+            <TextBox x:Name="mojeimie"  Grid.Column="0" Grid.Row="1" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center" Width="193" Margin="0,11,8,11" KeyUp="Mojeimie_KeyUp" ToolTip="Wpisz imię i naciśnij ENTER"/>
+            <Label x:Name="dzialanie" Grid.Column="0" Grid.Row="2" Content="Jakie działanie wybierasz?" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden"/>
+            <Button x:Name="dodawanie" Content="Dodawanko" Grid.Column="0" Grid.Row="3" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="35,15,0,15" Click="Dodawanie_Click" Visibility="Hidden" />
+            <Button x:Name="odejmowanie" Content="Odejmowanko" Grid.Column="0" Grid.Row="3" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="130,15,0,15" Click="Odejmowanie_Click" Visibility="Hidden"/>
+            <Button x:Name="mnozenie" Content="Mnożonko" Grid.Column="0" Grid.Row="3" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="225,15,0,15" Click="Mnozenie_Click" Visibility="Hidden"/>
+            <Button x:Name="dzielenie" Content="Dzielonko" Grid.Column="0" Grid.Row="3" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="320,15,0,15" Click="Dzielenie_Click" Visibility="Hidden"/>
+            <Label x:Name="level" Grid.Column="0" Grid.Row="4" Content="Jaki poziom trudności?" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden"/>
+            <Button x:Name="easydodawanie"  Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="45,10,0,10" Width="85" Click="Easydodawanie_Click" Visibility="Hidden">
+                <StackPanel>
+                    <TextBox Text="Łatwizna" VerticalAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0"/>
+                    <Image Source="/Jpg/easy.jpg" Height="80" Width="80" IsEnabled="True" Visibility="Visible"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="normaldodawanie"  Grid.Column="0" Grid.Row="5" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="175,10,0,10" Click="Normaldodawanie_Click" Visibility="Hidden">
+                <StackPanel>
+                    <TextBox Text="Normalka" VerticalAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0"/>
+                    <Image Source="/Jpg/normal.jpg" Height="80" Width="80" IsEnabled="True" Visibility="Visible"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="harddodawanie" Grid.Column="0" Grid.Row="5" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="305,10,0,10" Click="Harddodawanie_Click" Visibility="Hidden">
+                <StackPanel>
+                    <TextBox Text="Twardziel" VerticalAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0"/>
+                    <Image Source="/Jpg/hard.jpg" Height="80" Width="80" IsEnabled="True" Visibility="Visible"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="easyodejowanie"  Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="45,10,0,10" Width="85" Click="Easyodejowanie_Click"  Visibility="Hidden">
+                <StackPanel>
+                    <TextBox Text="Łatwizna" VerticalAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0"/>
+                    <Image Source="/Jpg/easy.jpg" Height="80" Width="80" IsEnabled="True" Visibility="Visible"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="normalodejmowanie"  Grid.Column="0" Grid.Row="5" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="175,10,0,10" Click="Normalodejmowanie_Click"  Visibility="Hidden">
+                <StackPanel>
+                    <TextBox Text="Normalka" VerticalAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0"/>
+                    <Image Source="/Jpg/normal.jpg" Height="80" Width="80" IsEnabled="True" Visibility="Visible"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="hardodejmowanie" Grid.Column="0" Grid.Row="5" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="305,10,0,10" Click="Hardodejmowanie_Click"  Visibility="Hidden">
+                <StackPanel>
+                    <TextBox Text="Twardziel" VerticalAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0"/>
+                    <Image Source="/Jpg/hard.jpg" Height="80" Width="80" IsEnabled="True" Visibility="Visible"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="easymnozenie"  Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="45,10,0,10" Width="85" Visibility="Hidden" Click="Easymnozenie_Click">
+                <StackPanel>
+                    <TextBox Text="Łatwizna" VerticalAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0"/>
+                    <Image Source="/Jpg/easy.jpg" Height="80" Width="80" IsEnabled="True" Visibility="Visible"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="normalmnozenie"  Grid.Column="0" Grid.Row="5" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="175,10,0,10" Visibility="Hidden" Click="Normalmnozenie_Click">
+                <StackPanel>
+                    <TextBox Text="Normalka" VerticalAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0"/>
+                    <Image Source="/Jpg/normal.jpg" Height="80" Width="80" IsEnabled="True" Visibility="Visible"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="hardmnozenie" Grid.Column="0" Grid.Row="5" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="305,10,0,10" Visibility="Hidden" Click="Hardmnozenie_Click">
+                <StackPanel>
+                    <TextBox Text="Twardziel" VerticalAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0"/>
+                    <Image Source="/Jpg/hard.jpg" Height="80" Width="80" IsEnabled="True" Visibility="Visible"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="easydzielenie"  Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="45,10,0,10" Width="85" Visibility="Hidden" Click="Easydzielenie_Click">
+                <StackPanel>
+                    <TextBox Text="Łatwizna" VerticalAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0"/>
+                    <Image Source="/Jpg/easy.jpg" Height="80" Width="80" IsEnabled="True" Visibility="Visible"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="normaldzielenie"  Grid.Column="0" Grid.Row="5" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="175,10,0,10" Visibility="Hidden" Click="Normaldzielenie_Click">
+                <StackPanel>
+                    <TextBox Text="Normalka" VerticalAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0"/>
+                    <Image Source="/Jpg/normal.jpg" Height="80" Width="80" IsEnabled="True" Visibility="Visible"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="harddzielenie" Grid.Column="0" Grid.Row="5" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="305,10,0,10" Visibility="Hidden" Click="Harddzielenie_Click">
+                <StackPanel>
+                    <TextBox Text="Twardziel" VerticalAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0"/>
+                    <Image Source="/Jpg/hard.jpg" Height="80" Width="80" IsEnabled="True" Visibility="Visible"/>
+                </StackPanel>
+            </Button>
+
+        </Grid>
+        <Grid Margin="445,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="445"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label x:Name="zadanie" Content="Zadanko:" Grid.Column="0" Grid.Row="0" Height="40" Width="84" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,200,5" FontSize="16" Visibility="Hidden"/>
+            <Label x:Name="exercise" Grid.Column="0" Grid.Row="0" Height="40" Width="92" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" FontSize="16" Visibility="Hidden"/>
+            <Button x:Name="nowa_gra" Content="Nowa gra" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="312,5,50,5" FontSize="16" Width="80" Click="Nowa_gra_Click" Visibility="Hidden"/>
+            <Label x:Name="wynik" Content="Wpisz wynik:" Grid.Column="0" Grid.Row="1" Height="40" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,200,5" FontSize="16" Visibility="Hidden"/>
+            <TextBox x:Name="score" Grid.Column="0" Grid.Row="1" Height="30" Width="86" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="0,5,0,15" FontSize="16" Visibility="Hidden"/>
+            <Button x:Name="potwierdz" Content="Potwierdz" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="312,8,50,16" FontSize="16" Width="80" Click="Potwierdz_Click" Visibility="Hidden"/>
+            <Label x:Name="wynik1"   Grid.Column="0" Grid.Row="2" Height="40" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,200,5" FontSize="16" Visibility="Hidden"/>
+            <Button x:Name="kontynuuj" Content="Jeszcze raz" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="312,8,50,16" FontSize="16" Width="80" Click="Potwierdz_Click" Visibility="Hidden"/>
+
+        </Grid>
+    </Grid>
+</Window>
